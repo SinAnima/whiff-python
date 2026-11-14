@@ -1,0 +1,32 @@
+[package]
+name = "whiff_native"
+version = "0.1.0"
+description = "PyO3 bindings for the whiff crate"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lib]
+name = "whiff_native"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+pyo3 = { version = "0.30", features = ["abi3-py311"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+whiff = { version = "=0.8.0", default-features = false }
+
+[features]
+default = ["common"]
+common = ["whiff/common"]
+geo = ["whiff/geo"]
+science = ["whiff/science"]
+data = ["whiff/data"]
+cad = ["whiff/cad"]
+forensics = ["whiff/forensics"]
+games = ["whiff/games"]
+full = ["whiff/full"]
+# Maturin enables this feature when building the extension. Leave it out of
+# `default` so `cargo test` links libpython normally.
+extension-module = ["pyo3/extension-module"]

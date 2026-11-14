@@ -1,0 +1,16 @@
+[package]
+name = "whiff_rust_extract_probe"
+version = "0.1.0"
+description = "Print one whiff report for golden comparisons"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "whiff_rust_extract_probe"
+path = "src/main.rs"
+
+[dependencies]
+serde_json = "1"
+whiff = { version = "=0.8.0", default-features = false, features = ["common"] }
