@@ -18,7 +18,7 @@ Empty optional fields are omitted. The vendored schema is `whiff.schema()`.
 
 ## Install
 
-Import the package as `whiff`. The PyPI project `whiff` already belongs to an unrelated library, so this distribution is named `whiff-python`. It is not published yet. From a checkout, with Rust 1.89 or later:
+Import the package as `whiff`. The PyPI project `whiff` already belongs to an unrelated library, so this distribution is named `whiff-python`. A GitHub release tagged with the `version` in `pyproject.toml` (an optional `v` prefix is fine) publishes the wheels. From a checkout, with Rust 1.89 or later:
 
 ```sh
 maturin develop
