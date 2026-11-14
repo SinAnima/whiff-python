@@ -25,7 +25,7 @@ jobs:
       - name: cargo test
         run: cargo test --all-targets
       - name: python deps
-        run: uv venv && uv pip install maturin pytest ruff
+        run: uv venv --allow-existing && uv pip install maturin pytest ruff
       - name: develop
         run: uv run maturin develop --manifest-path native/Cargo.toml
       - name: ruff
